@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="THf-8h-Mjm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Currency Rates View Controller-->
+        <scene sceneID="8MV-wc-WpE">
+            <objects>
+                <viewController id="THf-8h-Mjm" customClass="CurrencyRatesViewController" customModule="CurrencyRates" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YjT-id-HaM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4jY-mR-cT9" userLabel="CurrencyRates Table View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyCell" rowHeight="93" id="FZn-Zg-BQb" customClass="CurrencyRatesTableViewCell" customModule="CurrencyRates" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="93"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FZn-Zg-BQb" id="bCK-jz-vtr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iTs-OJ-ZdX" userLabel="currencyFlagImage">
+                                                    <rect key="frame" x="35" y="31" width="30.5" height="30.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="iTs-OJ-ZdX" secondAttribute="height" multiplier="1:1" id="j8h-Gt-Pvb"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Currency code" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffi-Ns-aNY" userLabel="lblCurrencyCode">
+                                                    <rect key="frame" x="80.5" y="31" width="113" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Currency name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mmm-cj-ay2" userLabel="lblCurrencyName">
+                                                    <rect key="frame" x="80.5" y="56.5" width="86.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOs-V5-4b0">
+                                                    <rect key="frame" x="335" y="31.5" width="30" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textFieldSelected:" destination="FZn-Zg-BQb" eventType="editingDidBegin" id="d0h-LR-hLg"/>
+                                                        <action selector="textFieldValueChanged:" destination="FZn-Zg-BQb" eventType="editingChanged" id="IlZ-IK-KiL"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ffi-Ns-aNY" firstAttribute="leading" secondItem="iTs-OJ-ZdX" secondAttribute="trailing" constant="15" id="FLZ-HI-U08"/>
+                                                <constraint firstItem="iTs-OJ-ZdX" firstAttribute="leading" secondItem="bCK-jz-vtr" secondAttribute="leadingMargin" constant="20" id="G2a-dy-yqU"/>
+                                                <constraint firstItem="ffi-Ns-aNY" firstAttribute="leading" secondItem="Mmm-cj-ay2" secondAttribute="leading" id="GBn-p5-ks6"/>
+                                                <constraint firstItem="iTs-OJ-ZdX" firstAttribute="top" secondItem="bCK-jz-vtr" secondAttribute="topMargin" constant="20" id="Klh-X4-bhq"/>
+                                                <constraint firstItem="xOs-V5-4b0" firstAttribute="centerY" secondItem="iTs-OJ-ZdX" secondAttribute="centerY" id="WMN-Ep-VWc"/>
+                                                <constraint firstItem="xOs-V5-4b0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ffi-Ns-aNY" secondAttribute="trailing" constant="10" id="fbW-kN-aHN"/>
+                                                <constraint firstItem="xOs-V5-4b0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mmm-cj-ay2" secondAttribute="trailing" constant="10" id="g6y-ZF-tLu"/>
+                                                <constraint firstItem="Mmm-cj-ay2" firstAttribute="top" secondItem="ffi-Ns-aNY" secondAttribute="bottom" constant="5" id="hgZ-qx-Awf"/>
+                                                <constraint firstAttribute="trailing" secondItem="xOs-V5-4b0" secondAttribute="trailing" constant="10" id="kXD-Oa-Aqp"/>
+                                                <constraint firstItem="iTs-OJ-ZdX" firstAttribute="top" secondItem="ffi-Ns-aNY" secondAttribute="top" id="odc-zL-KRB"/>
+                                                <constraint firstItem="iTs-OJ-ZdX" firstAttribute="centerY" secondItem="bCK-jz-vtr" secondAttribute="centerY" priority="999" id="y7w-vE-QsU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="currencyFlagImage" destination="iTs-OJ-ZdX" id="IWF-i3-olm"/>
+                                            <outlet property="lblCurrencyCode" destination="ffi-Ns-aNY" id="h5U-vz-cKa"/>
+                                            <outlet property="lblCurrencyName" destination="Mmm-cj-ay2" id="Bgx-bk-0t9"/>
+                                            <outlet property="rateTextField" destination="xOs-V5-4b0" id="c9V-T6-Xmi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="THf-8h-Mjm" id="AXT-aI-dbP"/>
+                                    <outlet property="delegate" destination="THf-8h-Mjm" id="Dyf-vl-jpz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4jY-mR-cT9" secondAttribute="bottom" id="UNG-AP-kSm"/>
+                            <constraint firstItem="4jY-mR-cT9" firstAttribute="leading" secondItem="WTZ-EI-PTR" secondAttribute="leading" id="hgf-tN-uuO"/>
+                            <constraint firstItem="WTZ-EI-PTR" firstAttribute="trailing" secondItem="4jY-mR-cT9" secondAttribute="trailing" id="pD4-Oa-uUJ"/>
+                            <constraint firstItem="4jY-mR-cT9" firstAttribute="top" secondItem="WTZ-EI-PTR" secondAttribute="top" id="pgO-Y6-Hr2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WTZ-EI-PTR"/>
+                    </view>
+                    <connections>
+                        <outlet property="currencyRatesTableView" destination="4jY-mR-cT9" id="yZN-0t-B0u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G5d-m8-tYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
